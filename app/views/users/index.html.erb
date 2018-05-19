@@ -17,7 +17,6 @@
         <td><%= user.username %></td>
 
         <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -27,4 +26,14 @@
 <br>
 
 <%= link_to 'Back', moves_path %>
-<%= link_to 'New User', new_user_path %>
+<% if user_signed_in? %>
+  <%= link_to('Edit registration', edit_user_registration_path) %>
+<% else %>
+  <%= link_to('Register', new_user_registration_path)  %>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+<% else %>
+  <%= link_to('Login', new_user_session_path)  %>
+<% end %>

@@ -1,4 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<% if user_signed_in? %>
+  <%= link_to('Edit registration', edit_user_registration_path) %>
+<% else %>
+  <%= link_to('Register', new_user_registration_path)  %>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+<% else %>
+  <%= link_to('Login', new_user_session_path)  %>
+<% end %>
 <%= link_to 'Back', users_path %>
+
+<h1>Details of <%= @user.username %></h1>
+
+
+<h3>Username</h3>
+<%= @user.username %>
+
+<h3>Email</h3>
+<%= @user.email %>
+
+<h3>Gender</h3>
+<%= @user.is_female  %>
+
+<h3>Rating</h3>
+
+<h3>Lives around</h3>
+
+<h3>Firstname</h3>
+<%= @user.firstname %>
+
+<h3>Lastname</h3>
+<%= @user.lastname %>
