@@ -17,16 +17,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :owner %>
-    <%= form.text_field :owner, id: :request_owner %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :request_email %>
-  </div>
-
-  <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description, id: :request_description %>
   </div>
@@ -46,6 +36,8 @@
     <%= form.text_field :urgency, id: :request_urgency %>
   </div>
 
+<h2>Pickup address</h2>
+
   <div class="field">
     <%= form.label :from_address %>
     <%= form.text_field :from_address, id: :request_from_address %>
@@ -60,6 +52,8 @@
     <%= form.label :from_state %>
     <%= form.text_field :from_state, id: :request_from_state %>
   </div>
+
+  <h2>Delivery address</h2>
 
   <div class="field">
     <%= form.label :to_address %>

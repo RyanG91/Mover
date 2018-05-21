@@ -52,3 +52,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added at 2018-05-17 14:55:39 +1000 by ryan2:
 gem "devise", "~> 4.4"
+
+# Added at 2018-05-21 20:25:51 +1000 by ryan2:
+gem "geocoder", "~> 1.4"

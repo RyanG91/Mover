@@ -35,6 +35,8 @@
   <%= @request.urgency %>
 </p>
 
+<h2>Pickup Address</h2>
+
 <p>
   <strong>From address:</strong>
   <%= @request.from_address %>
@@ -49,6 +51,8 @@
   <strong>From state:</strong>
   <%= @request.from_state %>
 </p>
+
+<h2>Dropoff Address</h2>
 
 <p>
   <strong>To address:</strong>
@@ -65,5 +69,13 @@
   <%= @request.to_state %>
 </p>
 
+<iframe
+  width="800"
+  height="650"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA-d9dGo6Z72Eo-i7QkFQRoYJXwW_LLmb4
+    &q=<%= @request.full_street_address %>" allowfullscreen>
+</iframe>
+
 <%= link_to 'Edit', edit_request_path(@request) %> |
-<%= link_to 'Back', requests_path %>
+<%= link_to 'Home', moves_path %>
