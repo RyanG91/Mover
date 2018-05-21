@@ -5,7 +5,7 @@ class MovesController < ApplicationController
   # GET /moves.json
   def index
     @moves = Move.all
-    @jobs = Job.all
+    @requests = Request.all
   end
 
   # GET /moves/1

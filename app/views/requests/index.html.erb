@@ -1,37 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Mover</h1>
-
-<br>
-
-<%= link_to 'User Profiles', users_path %>
-
-<%= link_to 'Request Job', new_request_path %>
-
-<% if user_signed_in? %>
-  <%= link_to('Edit registration', edit_user_registration_path) %>
-<% else %>
-  <%= link_to('Register', new_user_registration_path)  %>
-<% end %>
-
-<% if user_signed_in? %>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-<% else %>
-  <%= link_to('Login', new_user_session_path)  %>
-<% end %>
-
-<br>
-
-<h2>Jobs Requested</h2>
+<h1>Requests</h1>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
       <th>Owner</th>
+      <th>Email</th>
+      <th>Description</th>
       <th>Cost</th>
       <th>Size</th>
       <th>Urgency</th>
+      <th>From address</th>
+      <th>From city</th>
+      <th>From state</th>
+      <th>To address</th>
+      <th>To city</th>
+      <th>To state</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -41,9 +27,17 @@
       <tr>
         <td><%= request.title %></td>
         <td><%= request.owner %></td>
+        <td><%= request.email %></td>
+        <td><%= request.description %></td>
         <td><%= request.cost %></td>
         <td><%= request.size %></td>
         <td><%= request.urgency %></td>
+        <td><%= request.from_address %></td>
+        <td><%= request.from_city %></td>
+        <td><%= request.from_state %></td>
+        <td><%= request.to_address %></td>
+        <td><%= request.to_city %></td>
+        <td><%= request.to_state %></td>
         <td><%= link_to 'Show', request %></td>
         <td><%= link_to 'Edit', edit_request_path(request) %></td>
         <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -54,4 +48,4 @@
 
 <br>
 
-<h2>Jobs Offered</h2>
+<%= link_to 'New Request', new_request_path %>
