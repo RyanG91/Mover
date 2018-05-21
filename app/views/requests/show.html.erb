@@ -73,8 +73,9 @@
   width="800"
   height="650"
   frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA-d9dGo6Z72Eo-i7QkFQRoYJXwW_LLmb4
-    &q=<%= @request.full_street_address %>" allowfullscreen>
+  src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyA1saKjb3iqgj5nsID_pSspZgfXPZB7L5c
+  &origin=<%= @request.full_street_address %>
+  &destination=<%= @request.destination %>" allowfullscreen>
 </iframe>
 
 <%= link_to 'Edit', edit_request_path(@request) %> |
