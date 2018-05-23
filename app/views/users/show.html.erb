@@ -1,19 +1,5 @@
 <p id="notice"><%= notice %></p>
-
-<% if user_signed_in? %>
-  <%= link_to('Edit registration', edit_user_registration_path) %>
-<% else %>
-  <%= link_to('Register', new_user_registration_path)  %>
-<% end %>
-
-<% if user_signed_in? %>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-<% else %>
-  <%= link_to('Login', new_user_session_path)  %>
-<% end %>
-<%= link_to 'Back', users_path %>
-
-<h1>Details of <%= @user.username %></h1>
+<h2>Details of <%= @user.username %></h2>
 
 
 <h3>Username</h3>
@@ -22,15 +8,31 @@
 <h3>Email</h3>
 <%= @user.email %>
 
+<h3>About me</h3>
+<%= @user.description %>
+
 <h3>Gender</h3>
 <%= @user.is_female  %>
 
 <h3>Rating</h3>
 
-<h3>Lives around</h3>
 
 <h3>Firstname</h3>
 <%= @user.firstname %>
 
 <h3>Lastname</h3>
 <%= @user.lastname %>
+
+<h3>Lives in</h3>
+<%= @user.city %>
+<%= @user.state %>
+
+<br>
+
+<iframe
+  width="800"
+  height="650"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA-d9dGo6Z72Eo-i7QkFQRoYJXwW_LLmb4
+    &q=<%= @user.area %>" allowfullscreen>
+</iframe>
