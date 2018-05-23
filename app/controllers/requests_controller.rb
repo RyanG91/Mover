@@ -19,6 +19,7 @@ class RequestsController < ApplicationController
 
   # GET /requests/1/edit
   def edit
+    not_authorised and return unless current_user.can_edit?(@request)
   end
 
   # POST /requests
@@ -42,6 +43,7 @@ class RequestsController < ApplicationController
   # PATCH/PUT /requests/1
   # PATCH/PUT /requests/1.json
   def update
+    not_authorised and return unless current_user.can_edit?(@request)
     respond_to do |format|
       if @request.update(request_params)
         format.html { redirect_to @request, notice: 'Request was successfully updated.' }
@@ -56,6 +58,7 @@ class RequestsController < ApplicationController
   # DELETE /requests/1
   # DELETE /requests/1.json
   def destroy
+    not_authorised and return unless current_user.can_delete?(@request)
     @request.destroy
     respond_to do |format|
       format.html { redirect_to requests_url, notice: 'Request was successfully destroyed.' }
@@ -67,6 +70,11 @@ class RequestsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_request
       @request = Request.find(params[:id])
+    end
+
+    def not_authorised
+      flash[:notice] = "You are not authorised!"
+      redirect_to moves_path
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

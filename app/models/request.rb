@@ -1,4 +1,5 @@
 class Request < ApplicationRecord
+  resourcify
 
   geocoded_by :full_street_address   # can also be an IP address
   geocoded_by :destination

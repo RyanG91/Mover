@@ -55,3 +55,6 @@ gem "devise", "~> 4.4"
 
 # Added at 2018-05-21 20:25:51 +1000 by ryan2:
 gem "geocoder", "~> 1.4"
+
+# Added at 2018-05-23 20:21:42 +1000 by ryan2:
+gem "rolify", "~> 5.2"
