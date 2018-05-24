@@ -11,6 +11,9 @@
 <h3>About me</h3>
 <%= @user.description %>
 
+<h3>User Pic</h3>
+<%= image_tag @user.image_url(:medium) %>
+
 <h3>Gender</h3>
 <%= @user.is_female  %>
 

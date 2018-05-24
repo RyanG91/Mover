@@ -23,6 +23,11 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+  <div class="form-inputs">
+      <%= f.label :name %>
+      <%= f.file_field :image, as: :file %>
+  </div>
+
   <div>  <%= f.radio_button :is_female, '1' %> <%= f.label :is_female, "Female" %> </div>
   <div>  <%= f.radio_button :is_female, '0' %> <%= f.label :is_female, "Male" %> </div>
 

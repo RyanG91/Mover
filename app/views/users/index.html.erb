@@ -4,6 +4,7 @@
 <table>
   <thead>
     <tr>
+      <td>Image</td>
       <td>Username</td>
       <td>Rating</td>
       <td>Located Around</td>
@@ -15,6 +16,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= image_tag user.image_url(:thumb) %></td>
         <td><%= user.username %></td>
         <td></td>
         <td><%= user.city %> <%= user.state %></td>

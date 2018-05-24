@@ -58,3 +58,9 @@ gem "geocoder", "~> 1.4"
 
 # Added at 2018-05-23 20:21:42 +1000 by ryan2:
 gem "rolify", "~> 5.2"
+
+# Added at 2018-05-24 20:07:58 +1000 by ryan2:
+gem "carrierwave", "~> 1.2"
+
+# Added at 2018-05-24 20:09:25 +1000 by ryan2:
+gem "cloudinary", "~> 1.9"

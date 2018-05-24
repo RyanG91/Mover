@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
+  mount_uploader :image, UserImageUploader
+
   geocoded_by :area   # can also be an IP address
   after_validation :geocode          # auto-fetch coordinates
 
