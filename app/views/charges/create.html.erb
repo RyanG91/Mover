@@ -1,0 +1,22 @@
+<h1>Mover</h1>
+<br>
+
+<%= link_to 'Home', moves_path %>
+<%= link_to 'User Profiles', users_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Request Job', new_request_path %>
+  <%= link_to('Edit User Profile', edit_user_registration_path) %>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+<% else %>
+  <%= link_to('Register', new_user_registration_path)  %>
+  <%= link_to('Login', new_user_session_path)  %>
+<% end %>
+
+<% if user_signed_in? %>
+  <p>Currently logged in as: <%= current_user.username %></p>
+<% else %>
+  <p>Not signed in</p>
+<% end %>
+<br>
+
+<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
