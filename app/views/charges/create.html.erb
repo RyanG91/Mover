@@ -19,4 +19,4 @@
 <% end %>
 <br>
 
-<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+<h2>Thanks, you paid <strong><%= number_to_currency((@amount.to_f)/100) %> dollars</strong>!</h2>
