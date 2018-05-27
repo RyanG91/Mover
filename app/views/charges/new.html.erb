@@ -1,3 +1,25 @@
+<h1>Mover</h1>
+<br>
+
+<%= link_to 'Home', moves_path %>
+<%= link_to 'User Profiles', users_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Request Job', new_request_path %>
+  <%= link_to('Edit User Profile', edit_user_registration_path) %>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+<% else %>
+  <%= link_to('Register', new_user_registration_path)  %>
+  <%= link_to('Login', new_user_session_path)  %>
+<% end %>
+
+<% if user_signed_in? %>
+  <p>Currently logged in as: <%= current_user.username %></p>
+<% else %>
+  <p>Not signed in</p>
+<% end %>
+<br>
+
+
 <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
@@ -6,13 +28,27 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <input type="number" id="payment-input">
+      <br>
+      <span>Amount:
+        $<span id="amount-display">0.00</span></span>
     </label>
   </article>
 
+  <script type="text/javascript">
+    var paymentInput = document.getElementById("payment-input");
+    paymentInput.addEventListener("input", updatePaymentDisplay);
+
+    function updatePaymentDisplay() {
+      var amountDisplay = document.getElementById("amount-display");
+      var amount = paymentInput.value;
+      amountDisplay.innerHTML = amount;
+    }
+  </script>
+
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
+          data-description="Stripe Payment"
+          data-amount="5000"
           data-locale="auto"></script>
 <% end %>
