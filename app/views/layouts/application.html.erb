@@ -16,6 +16,7 @@
     <%= link_to 'User Profiles', users_path %>
     <% if user_signed_in? %>
       <%= link_to 'Request Job', new_request_path %>
+      <%= link_to 'Your Conversations', conversations_path %>
       <%= link_to('Edit User Profile', edit_user_registration_path) %>
       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
     <% else %>

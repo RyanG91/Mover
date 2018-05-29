@@ -67,3 +67,6 @@ gem "cloudinary", "~> 1.9"
 
 # Added at 2018-05-26 15:01:25 +1000 by ryan2:
 gem "stripe", "~> 3.15"
+
+# Added at 2018-05-29 20:26:09 +1000 by ryan2:
+gem "mailboxer", "~> 0.15.1"

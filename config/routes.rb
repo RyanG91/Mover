@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :requests
   resources :charges
-  
+  resources :conversations, only: [:index, :show, :destroy]
+  resources :messages, only: [:new, :create]
+
   devise_for :users
   resources :moves
   resources :users
