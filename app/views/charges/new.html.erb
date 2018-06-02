@@ -19,14 +19,10 @@
 <% end %>
 <br>
 
+<script src="https://checkout.stripe.com/checkout.js"></script>
 
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
+<button id="customButton">Purchase</button>
+
     <label class="amount">
       <input type="number" id="payment-input">
       <br>
@@ -34,28 +30,6 @@
         $<span id="amount-display">0.00</span></span>
     </label>
   </article>
-
-  <script type="text/javascript">
-    var paymentInput = document.getElementById("payment-input");
-    paymentInput.addEventListener("input", updatePaymentDisplay);
-
-    function updatePaymentDisplay() {
-      var amountDisplay = document.getElementById("amount-display");
-      var amount = paymentInput.value;
-      amountDisplay.innerHTML = amount;
-    }
-  </script>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Stripe Payment"
-          data-amount="5000"
-          data-locale="auto"></script>
-<% end %>
-
-<!-- <script src="https://checkout.stripe.com/checkout.js"></script>
-
-<button id="customButton">Purchase</button>
 
 <script>
 var handler = StripeCheckout.configure({
@@ -65,22 +39,43 @@ var handler = StripeCheckout.configure({
   token: function(token) {
     // You can access the token ID with `token.id`.
     // Get the token ID to your server-side code for use.
-  }
+  },
+  closed: onCheckoutClose
 });
+
+
+var paymentInput = document.getElementById("payment-input");
+paymentInput.addEventListener("input", updatePaymentDisplay);
+
+function updatePaymentDisplay() {
+  var amountDisplay = document.getElementById("amount-display");
+  var amount = paymentInput.value;
+  amountDisplay.innerHTML = amount;
+}
 
 document.getElementById('customButton').addEventListener('click', function(e) {
   // Open Checkout with further options:
   handler.open({
     name: 'Stripe.com',
     description: '2 widgets',
-    zipCode: true,
-    amount: 2000
+    amount: 2000,
   });
   e.preventDefault();
 });
 
+function onCheckoutClose() {
+  console.log('Checkout has been closed!');
+  //window.location.href = 'http://stackoverflow.com';
+  window.location.href = './create';
+}
+
 // Close Checkout on page navigation:
 window.addEventListener('popstate', function() {
+  alert('foo')
   handler.close();
+  window.location = '/charges/create'
 });
-</script> -->
+
+// window.location = '/charges/create'
+
+</script>

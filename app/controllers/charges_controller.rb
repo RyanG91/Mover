@@ -3,25 +3,32 @@ class ChargesController < ApplicationController
   def new
   end
 
-def create
-  # Amount in cents, this is mainly for testing at the moment
-  @amount = 500
+  def show
+    respond_to do |format|
+      format.json  { render :json => charge }
+      format.html  { render :template => "charges/create"}
+    end
+  end
 
-  customer = Stripe::Customer.create(
-    :email => params[:stripeEmail],
-    :source  => params[:stripeToken]
-  )
+  def create
+    # Amount in cents, this is mainly for testing at the moment
+    @amount = 500
 
-  charge = Stripe::Charge.create(
-    :customer    => customer.id,
-    :amount      => @amount,
-    :description => 'Rails Stripe customer',
-    :currency    => 'aud' #or whatever currency you like
-  )
+    customer = Stripe::Customer.create(
+      :email => params[:stripeEmail],
+      :source  => params[:stripeToken]
+    )
 
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to new_charge_path
+    charge = Stripe::Charge.create(
+      :customer    => customer.id,
+      :amount      => @amount,
+      :description => 'Rails Stripe customer',
+      :currency    => 'aud' #or whatever currency you like
+    )
+
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to new_charge_path
   end
 
 end
