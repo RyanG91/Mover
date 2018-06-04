@@ -19,63 +19,60 @@
 <% end %>
 <br>
 
-<script src="https://checkout.stripe.com/checkout.js"></script>
-
-<button id="customButton">Purchase</button>
-
-    <label class="amount">
-      <input type="number" id="payment-input">
-      <br>
-      <span>Amount:
-        $<span id="amount-display">0.00</span></span>
-    </label>
+<%= form_tag charges_path do %>
+  <div id="error_explanation">
+    <% if flash[:error].present? %>
+      <p><%= flash[:error] %></p>
+    <% end %>
+  </div>
+  <article>
+    <%= label_tag(:amount, 'Donation Amount:') %>
+    <%= text_field_tag(:amount) %>
   </article>
+  <article>
+    <%= hidden_field_tag(:stripeToken) %>
+  </article>
+  <button id='donateButton'>Donate</button>
+<% end %>
 
 <script>
 var handler = StripeCheckout.configure({
-  key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+  key: '<%= Rails.configuration.stripe[:publishable_key] %>',
   locale: 'auto',
+  name: 'Sand Castles United',
+  description: 'One-time donation',
   token: function(token) {
-    // You can access the token ID with `token.id`.
-    // Get the token ID to your server-side code for use.
-  },
-  closed: onCheckoutClose
+    $('input#stripeToken').val(token.id);
+    $('form').submit();
+  }
 });
-
-
-var paymentInput = document.getElementById("payment-input");
-paymentInput.addEventListener("input", updatePaymentDisplay);
-
-function updatePaymentDisplay() {
-  var amountDisplay = document.getElementById("amount-display");
-  var amount = paymentInput.value;
-  amountDisplay.innerHTML = amount;
-}
-
-document.getElementById('customButton').addEventListener('click', function(e) {
-  // Open Checkout with further options:
-  handler.open({
-    name: 'Stripe.com',
-    description: '2 widgets',
-    amount: 2000,
-  });
+$('#donateButton').on('click', function(e) {
   e.preventDefault();
+
+  $('#error_explanation').html('');
+
+  var amount = $('input#amount').val();
+  amount = amount.replace(/\$/g, '').replace(/\,/g, '')
+
+  amount = parseFloat(amount);
+
+  if (isNaN(amount)) {
+    $('#error_explanation').html('<p>Please enter a valid amount in USD ($).</p>');
+  }
+  else if (amount < 5.00) {
+    $('#error_explanation').html('<p>Donation amount must be at least $5.</p>');
+  }
+  else {
+    amount = amount * 100; // Needs to be an integer!
+    handler.open({
+      amount: Math.round(amount)
+    })
+  }
 });
 
-function onCheckoutClose() {
-  console.log('Checkout has been closed!');
-  //window.location.href = 'http://stackoverflow.com';
-  window.location.href = './create';
-}
-
-// Close Checkout on page navigation:
-window.addEventListener('popstate', function() {
-  alert('foo')
+$(window).on('popstate', function() {
   handler.close();
-  window.location = '/charges/create'
 });
-
-// window.location = '/charges/create'
-
 </script>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>

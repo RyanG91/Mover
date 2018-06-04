@@ -19,4 +19,6 @@
 <% end %>
 <br>
 
-<h2>Thanks, you paid <strong><%= number_to_currency((@amount.to_f)/100) %> dollars</strong>!</h2>
+<h2>Thank you!</h2>
+<p>Your donation of <strong><%= number_to_currency(@amount * 0.01) %></strong>
+ has been received.</p>
