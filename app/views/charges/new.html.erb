@@ -35,6 +35,8 @@
   <button id='donateButton'>Donate</button>
 <% end %>
 
+<h2>Mover Payment</h2>
+
 <script>
 var handler = StripeCheckout.configure({
   key: '<%= Rails.configuration.stripe[:publishable_key] %>',
