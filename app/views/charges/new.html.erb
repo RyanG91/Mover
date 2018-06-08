@@ -19,7 +19,7 @@
 <% end %>
 <br>
 
-
+<h2>Mover Payment</h2>
 
 <%= form_tag charges_path do %>
   <div id="error_explanation">
@@ -35,7 +35,7 @@
     <%= hidden_field_tag(:stripeToken) %>
   </article>
 <% end %>
-<button id='donateButton'>Donate</button>
+<button id='donateButton'>Payment</button>
 
 <script src="https://checkout.stripe.com/checkout.js"></script>
 <script
@@ -43,7 +43,6 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 
-<h2>Mover Payment</h2>
 
 <script>
 var handler = StripeCheckout.configure({
