@@ -4,6 +4,14 @@ class ConversationsController < ApplicationController
   before_action :get_conversation, except: [:index]
 
   def index
+    if @box.eql? "inbox"
+      @conversations = @mailbox.inbox
+    elsif @box.eql? "sent"
+      @conversations = @mailbox.sentbox
+    else
+      @conversations = @mailbox.trash
+    end
+
     @conversations = @mailbox.inbox(page: params[:page], per_page: 10)
   end
 
@@ -17,6 +25,13 @@ class ConversationsController < ApplicationController
   end
 
   private
+
+  def get_box
+    if params[:box].blank? or !["inbox","sent","trash"].include?(params[:box])
+      params[:box] = 'inbox'
+    end
+    @box = params[:box]
+  end
 
   def get_conversation
     @conversation ||= @mailbox.conversations.find(params[:id])
