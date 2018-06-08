@@ -70,3 +70,6 @@ gem "stripe", "~> 3.15"
 
 # Added at 2018-05-29 20:26:09 +1000 by ryan2:
 gem "mailboxer", "~> 0.15.1"
+
+# Added at 2018-06-08 14:27:11 +1000 by ryan2:
+gem "chosen-rails", "~> 1.8"

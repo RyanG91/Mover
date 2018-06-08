@@ -59,6 +59,10 @@ GEM
       mime-types (>= 1.16)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
+    chosen-rails (1.8.3)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
     cloudinary (1.9.1)
       aws_cf_signer
       rest-client
@@ -221,6 +225,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   carrierwave (~> 1.2)
+  chosen-rails (~> 1.8)
   cloudinary (~> 1.9)
   coffee-rails (~> 4.2)
   devise (~> 4.4)

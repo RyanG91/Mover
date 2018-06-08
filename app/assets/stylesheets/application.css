@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+zz
  .messages {
    max-height: 400px;
    overflow-y: auto;
