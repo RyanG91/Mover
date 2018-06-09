@@ -22,8 +22,8 @@
         <td><%= user.city %>, <%= user.state %></td>
 
         <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Message User', new_message_path %></td>
         <% if user_signed_in? %>
+          <td><%= link_to 'Message User', new_message_path %></td>
           <% if current_user.can_delete?(user) %>
             <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>
