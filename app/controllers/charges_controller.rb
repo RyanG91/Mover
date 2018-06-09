@@ -11,7 +11,7 @@ class ChargesController < ApplicationController
     begin
       @amount = Float(@amount).round(2)
     rescue
-      flash[:error] = 'Charge not completed. Please enter a valid amount in USD ($).'
+      flash[:error] = 'Charge not completed. Please enter a valid amount in Australian dollars ($).'
       redirect_to new_charge_path
       return
     end
@@ -26,7 +26,7 @@ class ChargesController < ApplicationController
 
     Stripe::Charge.create(
       :amount => @amount,
-      :currency => 'usd',
+      :currency => 'aud',
       :source => params[:stripeToken],
       :description => 'Custom donation'
     )
