@@ -1,5 +1,10 @@
 <h3>Start Conversation</h3>
 
+<div class="form-group">
+  <%= label_tag 'recipients', 'Choose recipients' %>
+  <%= select_tag 'recipients', recipients_options, multiple: true, class: 'form-control' %>
+</div>
+
 <%= form_tag messages_path, method: :post do %>
   <div class="form-group">
     <%= label_tag 'message[subject]', 'Subject' %>
@@ -8,12 +13,7 @@
 
   <div class="form-group">
     <%= label_tag 'message[body]', 'Message' %>
-    <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
-  </div>
-
-  <div class="form-group">
-    <%= label_tag 'recipients', 'Choose recipients' %>
-    <%= select_tag 'recipients', recipients_options, multiple: true, class: 'form-control' %>
+    <%= text_area_tag 'message[body]', nil, cols: 80, rows: 20, class: 'form-control', required: true %>
   </div>
 
   <%= submit_tag 'Send', class: 'btn btn-primary' %>
