@@ -21,11 +21,11 @@
       <tr>
         <td><%= request.title %></td>
         <td><%= request.owner %></td>
-        <td><%= request.cost %></td>
+        <td>$<%= request.cost %></td>
         <td><%= request.size %></td>
         <td><%= request.urgency %></td>
-        <td><%= request.from_city %></td>
-        <td><%= request.to_city %></td>
+        <td><%= request.from_city %>, <%= request.from_state %></td>
+        <td><%= request.to_city %>, <%= request.to_state %></td>
         <td><%= link_to 'Show', request %></td>
         <% if user_signed_in? %>
           <% if current_user.can_edit?(request) %>
