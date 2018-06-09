@@ -27,6 +27,7 @@
         <td><%= request.from_city %>, <%= request.from_state %></td>
         <td><%= request.to_city %>, <%= request.to_state %></td>
         <td><%= link_to 'Show', request %></td>
+        <td><%= link_to 'Message User', new_message_path %></td>
         <% if user_signed_in? %>
           <% if current_user.can_edit?(request) %>
             <td><%= link_to 'Edit', edit_request_path(request) %></td>
