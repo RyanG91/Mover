@@ -6,6 +6,7 @@ class MovesController < ApplicationController
   def index
     @moves = Move.all
     @requests = Request.all
+    @providers = Provider.all
   end
 
   # GET /moves/1

@@ -25,6 +25,8 @@ class ProvidersController < ApplicationController
   # POST /providers.json
   def create
     @provider = Provider.new(provider_params)
+    @provider.owner = current_user.username
+    @provider.email = current_user.email
 
     respond_to do |format|
       if @provider.save
