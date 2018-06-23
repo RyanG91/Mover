@@ -1,3 +1,10 @@
+
+<% if current_user.can_edit?(@provider) %>
+  <%= link_to 'Edit', edit_provider_path(@provider) %>
+<% end %>
+
+<br>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -40,7 +47,12 @@
   <%= @provider.state %>
 </p>
 
-<%= link_to 'Edit', edit_provider_path(@provider) %> |
-<%= link_to 'Home', moves_path %>
+<br>
 
-<%= link_to 'User Profiles', users_path %>
+<iframe
+  width="800"
+  height="650"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA-d9dGo6Z72Eo-i7QkFQRoYJXwW_LLmb4
+    &q=<%= @provider.provider_geocode %>" allowfullscreen>
+</iframe>
