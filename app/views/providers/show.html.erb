@@ -1,6 +1,7 @@
-
-<% if current_user.can_edit?(@provider) %>
-  <%= link_to 'Edit', edit_provider_path(@provider) %>
+<% if user_signed_in? %>
+  <% if current_user.can_edit?(@provider) %>
+    <%= link_to 'Edit', edit_provider_path(@provider) %>
+  <% end %>
 <% end %>
 
 <br>

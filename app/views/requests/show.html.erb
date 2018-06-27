@@ -1,6 +1,8 @@
 
-<% if current_user.can_edit?(@request) %>
-  <%= link_to 'Edit', edit_request_path(@request) %>
+<% if user_signed_in? %>
+  <% if current_user.can_edit?(@request) %>
+    <%= link_to 'Edit', edit_request_path(@request) %>
+  <% end %>
 <% end %>
 
 <p id="notice"><%= notice %></p>
