@@ -1,25 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Abouts</h1>
+<h2>About Mover</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @abouts.each do |about| %>
-      <tr>
-        <td><%= link_to 'Show', about %></td>
-        <td><%= link_to 'Edit', edit_about_path(about) %></td>
-        <td><%= link_to 'Destroy', about, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New About', new_about_path %>
+<p>Mover is a side project made with the idea of connecting people togeather.</p>
+<p>It aims to connect individuals who own moving vechiles with those who need something moved.</p>
+<p>The types of services offered on the website include:</p>
+<ul>
+  <li>List a service</li>
+  <li>Request a service</li>
+  <li>Messaging other users</li>
+  <li>Arrange your own payment types</li>
+  <li>Rate other users based on service quality</li>
+</ul>
