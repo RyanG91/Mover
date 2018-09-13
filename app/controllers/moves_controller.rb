@@ -7,6 +7,9 @@ class MovesController < ApplicationController
     @moves = Move.all
     @requests = Request.all
     @providers = Provider.all
+    filtering_params.each do |key, value|
+      @moves = @moves.public_send(key, value) if value.present?
+    end
   end
 
   # GET /moves/1
@@ -64,6 +67,11 @@ class MovesController < ApplicationController
   end
 
   private
+
+    def filtering_params
+      params.slice(:title, :owner, :cost)
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_move
       @move = Move.find(params[:id])
