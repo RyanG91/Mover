@@ -5,6 +5,9 @@ class RequestsController < ApplicationController
   # GET /requests.json
   def index
     @requests = Request.all
+    filtering_params.each do |key, value|
+      @requests = @requests.public_send(key, value) if value.present?
+    end
   end
 
   # GET /requests/1
@@ -67,6 +70,10 @@ class RequestsController < ApplicationController
   end
 
   private
+  def filtering_params
+    params.slice(:title, :owner, :cost)
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_request
       @request = Request.find(params[:id])
