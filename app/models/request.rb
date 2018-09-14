@@ -5,6 +5,10 @@ class Request < ApplicationRecord
   geocoded_by :destination
   after_validation :geocode          # auto-fetch coordinates
 
+  scope(:title, -> (title) { where("LOWER(title) like ?", "%#{title.downcase}%")})
+  scope(:owner, -> (owner) { where("LOWER(owner) like ?", "%#{owner.downcase}%")})
+  scope(:cost, -> (cost) { where cost: cost })
+
   def full_street_address
     "#{from_address}, #{from_city}, #{from_state}"
   end
