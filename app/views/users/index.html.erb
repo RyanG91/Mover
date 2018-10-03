@@ -23,7 +23,7 @@
         <td></td>
         <td><%= user.city %>, <%= user.state %></td>
 
-        <td><%= link_to 'Make payment to user', new_charge_path %></td>        
+        <td><%= link_to 'Make payment to user', new_charge_path(user: @user) %></td>
         <td><%= link_to 'Show', user %></td>
         <% if user_signed_in? %>
           <td><%= link_to 'Message User', new_message_path %></td>

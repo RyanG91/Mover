@@ -20,6 +20,7 @@
 <br>
 
 <h2>Mover Payment</h2>
+<h4>Please make sure both parties agreed to the payment amount before continuing</h4>
 <p>Please note that Mover takes a 5% cut in all payments</p>
 <br>
 
@@ -30,14 +31,14 @@
     <% end %>
   </div>
   <article>
-    <%= label_tag(:amount, 'Donation Amount:') %>
+    <%= label_tag(:amount, 'Payment Amount:') %>
     <%= text_field_tag(:amount) %>
   </article>
   <article>
     <%= hidden_field_tag(:stripeToken) %>
   </article>
 <% end %>
-<button id='donateButton'>Payment</button>
+<button id='donateButton'>Make Payment</button>
 
 <script src="https://checkout.stripe.com/checkout.js"></script>
 <script
