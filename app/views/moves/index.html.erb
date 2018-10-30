@@ -34,14 +34,19 @@
         <th><%= sort_link(@q, :cost) %></th>
         <th><%= sort_link(@q, :size) %></th>
         <th><%= sort_link(@q, :urgency) %></th>
-        <th><%= sort_link(@q, :from_city) %></th>
-        <th><%= sort_link(@q, :to_city) %></th>
+        <th>
+          <%= sort_link(@q, :from_city) do %>
+            <strong>Pickup City/Suburb</strong>
+          <% end %>
+        </th>
+        <th>
+          <%= sort_link(@q, :to_city) do %>
+            <strong>Dropoff City/Suburb</strong>
+          <% end %>
+        </th>
         <th colspan="3"></th>
       </tr>
   </thead>
-
-<!-- Pickup City/Suburb -->
-<!-- Dropoff City/Suburb -->
 
   <tbody>
     <% @requests.each do |request| %>

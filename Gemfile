@@ -78,5 +78,3 @@ gem "mailboxer", "~> 0.15.1"
 gem "chosen-rails", "~> 1.8"
 
 gem "pry", "~> 0.11.3"
-
-# gem 'pry-rails', :group => :development
