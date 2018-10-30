@@ -6,7 +6,6 @@ class ChargesController < ApplicationController
 
   def create
     @amount = params[:amount]
-
     @amount = @amount.gsub('$', '').gsub(',', '')
 
     begin
