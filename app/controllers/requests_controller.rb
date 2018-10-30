@@ -5,16 +5,11 @@ class RequestsController < ApplicationController
   # GET /requests.json
 
   def index
-    @q = Request.ransack(params[:q])
-    @requests = @q.result(distinct: true)
+    @requests = Request.all
+    filtering_params.each do |key, value|
+      @requests = @requests.public_send(key, value) if value.present?
+    end
   end
-
-  # def index
-  #   @requests = Request.all
-  #   filtering_params.each do |key, value|
-  #     @requests = @requests.public_send(key, value) if value.present?
-  #   end
-  # end
 
   # GET /requests/1
   # GET /requests/1.json
