@@ -28,17 +28,20 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Title</th>
-      <th>Owner</th>
-      <th>Cost</th>
-      <th>Size</th>
-      <th>Urgency</th>
-      <th>Pickup City/Suburb</th>
-      <th>Dropoff City/Suburb</th>
-      <th colspan="3"></th>
-    </tr>
+      <tr>
+        <th><%= sort_link(@q, :title) %></th>
+        <th><%= sort_link(@q, :owner) %></th>
+        <th><%= sort_link(@q, :cost) %></th>
+        <th><%= sort_link(@q, :size) %></th>
+        <th><%= sort_link(@q, :urgency) %></th>
+        <th><%= sort_link(@q, :from_city) %></th>
+        <th><%= sort_link(@q, :to_city) %></th>
+        <th colspan="3"></th>
+      </tr>
   </thead>
+
+<!-- Pickup City/Suburb -->
+<!-- Dropoff City/Suburb -->
 
   <tbody>
     <% @requests.each do |request| %>

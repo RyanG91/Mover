@@ -5,8 +5,10 @@ class MovesController < ApplicationController
   # GET /moves.json
   def index
     @moves = Move.all
-    @requests = Request.all
+    @q = Request.ransack(params[:q])
+    @requests = @q.result(distinct: true)
     @providers = Provider.all
+
     filtering_params.each do |key, value|
       @moves = @moves.public_send(key, value) if value.present?
     end

@@ -1,0 +1,41 @@
+=> [32m#<Pry:0x0000000007afa0d0[0m
+ @backtrace[32m=[0m
+  [[31m[1;31m"[0m[31mC:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/railties-5.1.6/lib/rails/commands/console/console_command.rb:62:in `start'[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mC:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/railties-5.1.6/lib/rails/commands/console/console_command.rb:17:in `start'[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mC:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/railties-5.1.6/lib/rails/commands/console/console_command.rb:97:in `perform'[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mC:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/thor-0.20.0/lib/thor/command.rb:27:in `run'[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mC:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/thor-0.20.0/lib/thor/invocation.rb:126:in `invoke_command'[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mC:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/thor-0.20.0/lib/thor.rb:387:in `dispatch'[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mC:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/railties-5.1.6/lib/rails/command/base.rb:63:in `perform'[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mC:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/railties-5.1.6/lib/rails/command.rb:44:in `invoke'[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mC:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/railties-5.1.6/lib/rails/commands.rb:16:in `<top (required)>'[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mbin/rails:4:in `require'[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mbin/rails:4:in `<main>'[1;31m"[0m[31m[0m],
+ @binding_stack[32m=[0m[[32m#<Binding:0x0000000007b111b8[0m[32m>[0m],
+ @command_state[32m=[0m{},
+ @config[32m=[0m
+  <[1;34;4mPry[0m::[1;34;4mConfig[0m:[1;34m0x3d7cf64[0m keys=[[31m[1;31m'[0m[31mprompt[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mmemory_size[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mcommand_completions[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mhooks[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31moutput[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mquiet[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mcommands[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mcorrect_indent[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mprompt_name[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mauto_indent[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31minput[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mcolor[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mextra_sticky_locals[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mprint[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mpager[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31moutput_prefix[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mexception_handler[1;31m'[0m[31m[0m] default=<[1;34;4mPry[0m::[1;34;4mConfig[0m:[1;34m0x454f020[0m keys=[[31m[1;31m'[0m[31mshould_load_plugins[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mcommand_prefix[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mcommands[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mshould_load_rc[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mshould_load_local_rc[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mpry_rails[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mshould_load_requires[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mrequires[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mhistory[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31minput[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mshould_trap_interrupts[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mprompt[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mmemory_size[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mcommand_completions[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mhooks[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31moutput[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mquiet[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mcollision_warning[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mcorrect_indent[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mprompt_name[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mauto_indent[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mcolor[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mextra_sticky_locals[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mprint[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mpager[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31moutput_prefix[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mexception_whitelist[1;31m'[0m[31m[0m,[31m[1;31m'[0m[31mexception_handler[1;31m'[0m[31m[0m] default=<[1;34;4mPry[0m::[1;34;4mConfig[0m::[1;34;4mDefault[0m:[1;34m0x454fc28[0m keys=[] default=[1;36mnil[0m>>>,
+ @custom_completions[32m=[0m
+  [32m#<Proc:0x0000000007af3438@C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/pry-0.11.3/lib/pry/config/default.rb:103>[0m,
+ @eval_string[32m=[0m[31m[1;31m"[0m[31m[1;31m"[0m[31m[0m,
+ @indent[32m=[0m
+  [32m#<Pry::Indent:0x0000000007afa030[0m
+   @awaiting_class[32m=[0m[1;36mfalse[0m,
+   @close_heredocs[32m=[0m{},
+   @heredoc_queue[32m=[0m[],
+   @indent_level[32m=[0m[31m[1;31m"[0m[31m[1;31m"[0m[31m[0m,
+   @module_nesting[32m=[0m[],
+   @stack[32m=[0m[],
+   @string_start[32m=[0m[1;36mnil[0m[32m>[0m,
+ @input_array[32m=[0m[32m#<Pry::HistoryArray size=7 first=0 max_size=100>[0m,
+ @last_exception[32m=[0m
+  [32m#<NameError: undefined local variable or method `__pry__' for main:Object
+Did you mean?  _pry_>[0m,
+ @last_result[32m=[0m[32m#<Pry:0x0000000007afa0d0[0m ...[32m>[0m,
+ @last_result_is_exception[32m=[0m[1;36mfalse[0m,
+ @output_array[32m=[0m[32m#<Pry::HistoryArray size=7 first=0 max_size=100>[0m,
+ @prompt_stack[32m=[0m
+  [[[32m#<Proc:0x000000000800f750@C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/pry-0.11.3/lib/pry.rb:56>[0m,
+    [32m#<Proc:0x000000000800f728@C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/pry-0.11.3/lib/pry.rb:60>[0m]],
+ @stopped[32m=[0m[1;36mfalse[0m,
+ @suppress_output[32m=[0m[1;36mfalse[0m[32m>[0m

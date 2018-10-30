@@ -76,3 +76,7 @@ gem "mailboxer", "~> 0.15.1"
 
 # Added at 2018-06-08 14:27:11 +1000 by ryan2:
 gem "chosen-rails", "~> 1.8"
+
+gem "pry", "~> 0.11.3"
+
+# gem 'pry-rails', :group => :development
