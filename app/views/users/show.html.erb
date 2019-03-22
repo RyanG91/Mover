@@ -14,17 +14,10 @@
 <h3>User Pic</h3>
 <%= image_tag @user.image_url(:medium) %>
 
-<h3>Gender</h3>
-<%= @user.is_female  %>
+<h3>Name</h3>
+<%= @user.name %>
 
 <h3>Rating</h3>
-
-
-<h3>Firstname</h3>
-<%= @user.firstname %>
-
-<h3>Lastname</h3>
-<%= @user.lastname %>
 
 <h3>Lives in</h3>
 <%= @user.city %>
