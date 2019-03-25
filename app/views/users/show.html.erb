@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 <h2>Details of <%= @user.username %></h2>
 
+<h3>Name</h3>
+<%= @user.full_name %>
 
 <h3>Username</h3>
 <%= @user.username %>
@@ -13,9 +15,6 @@
 
 <h3>User Pic</h3>
 <%= image_tag @user.image_url(:medium) %>
-
-<h3>Name</h3>
-<%= @user.name %>
 
 <h3>Rating</h3>
 
