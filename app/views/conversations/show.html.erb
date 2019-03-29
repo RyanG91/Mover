@@ -10,7 +10,10 @@
 
         <%= message.sender.name %>
           says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
-        <%= message.body %>
+          <br>
+          <br>
+
+        <h5><%= message.body %></h5>
       <% end %>
     </div>
   </div>
